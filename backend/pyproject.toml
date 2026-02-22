@@ -1,0 +1,24 @@
+[project]
+name = "kalinsky-api"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "aiosqlite>=0.22.1",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.34",
+]
+
+[dependency-groups]
+dev = [
+    "ruff",
+    "pytest",
+    "httpx",
+    "pytest-asyncio",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalinsky</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <span class="logo">Kalinsky Maker</span>
+        <button class="burger-btn" onclick="toggleMenu()">&#9776;</button>
+    </header>
+    <div class="burger-menu" id="burger-menu">
+        <div class="menu-section">
+            <h3>Tags</h3>
+            <div id="tags-list"></div>
+            <div class="tag-add">
+                <input type="text" id="new-tag-input" placeholder="New tag...">
+                <button onclick="createTag()">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="layout">
+        <aside class="panel panel-sources">
+            <div class="panel-header">
+                <h2>Sources</h2>
+                <button id="reindex-btn">Reindex</button>
+            </div>
+            <div id="sources-list"></div>
+        </aside>
+        <aside class="panel panel-form">
+            <div class="panel-header">
+                <h2>Assembly</h2>
+            </div>
+            <form id="assembly-form">
+                <input type="text" id="asm-name" placeholder="Name">
+                <label class="checkbox-label"><input type="checkbox" id="asm-preview" checked> Preview</label>
+                <div id="clips-list"></div>
+                <div id="clips-empty" class="empty">Click sources to add clips</div>
+                <button type="submit">Assemble</button>
+            </form>
+        </aside>
+        <aside class="panel panel-feed">
+            <div class="panel-header">
+                <h2>Results</h2>
+                <div class="results-tabs">
+                    <button class="tab-btn tab-active" data-tab="tries" onclick="switchTab('tries')">Tries</button>
+                    <button class="tab-btn" data-tab="releases" onclick="switchTab('releases')">Releases</button>
+                </div>
+            </div>
+            <div id="assemblies-list"></div>
+        </aside>
+        <main class="panel panel-player">
+            <div class="panel-header">
+                <h2 id="player-title">Player</h2>
+            </div>
+            <div id="player-content">
+                <div class="empty" style="padding:20px">Select an assembly from the feed</div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
